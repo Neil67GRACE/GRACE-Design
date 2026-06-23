@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRACE Regulatory Screen Mockup</title>
+    <style>
+        :root {
+            --teal: #2A7A9A;
+            --dark-navy: #1A4A5A;
+            --gray-bg: #F8FAFC;
+            --gray-border: #E2E8F0;
+            --muted-text: #64748B;
+            --ios-bg: #000000;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* iPhone Frame Container */
+        .phone-frame {
+            width: 390px;
+            height: 844px;
+            background-color: var(--ios-bg);
+            border-radius: 50px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            position: relative;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 4px solid #2d2d30;
+        }
+
+        /* Dynamic Island / Notch */
+        .dynamic-island {
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 110px;
+            height: 30px;
+            background-color: #000000;
+            border-radius: 20px;
+            z-index: 10;
+        }
+
+        /* Scrollable Screen Content Container */
+        .screen-container {
+            width: 100%;
+            height: 100%;
+            background-color: #FFFFFF;
+            border-radius: 40px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            padding: 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        .screen-container::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .status-bar-space {
+            height: 48px;
+            flex-shrink: 0;
+            background-color: #FFFFFF;
+        }
+
+        .app-content {
+            padding: 0 20px 40px 20px;
+        }
+
+        .header-section {
+            margin-bottom: 20px;
+        }
+
+        .company-name {
+            color: var(--teal);
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 4px 0;
+        }
+
+        .subtitle {
+            color: var(--muted-text);
+            font-size: 14px;
+            font-style: italic;
+            margin: 0 0 12px 0;
+        }
+
+        .divider {
+            height: 2px;
+            background-color: var(--teal);
+            width: 100%;
+            border: none;
+            margin: 0;
+        }
+
+        .section-card {
+            background-color: var(--gray-bg);
+            border: 1px solid var(--gray-border);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            color: var(--teal);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0 0 10px 0;
+        }
+
+        .data-item {
+            color: var(--dark-navy);
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 4px 0;
+        }
+
+        .data-item strong {
+            font-weight: 600;
+        }
+
+        .link-text {
+            color: var(--teal);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .link-text:hover {
+            text-decoration: underline;
+        }
+
+        .regulatory-footer {
+            text-align: center;
+            margin-top: 15px;
+            padding-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-note {
+            color: var(--muted-text);
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .ukca-symbol {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--dark-navy);
+            line-height: 1;
+            margin: 0;
+        }
+
+        .home-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 5px;
+            background-color: #000000;
+            border-radius: 10px;
+            z-index: 10;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="phone-frame">
+        <div class="dynamic-island"></div>
+        
+        <div class="screen-container">
+            <div class="status-bar-space"></div>
+            
+            <div class="app-content">
+                <div class="header-section">
+                    <h1 class="company-name">GRACE International Ltd</h1>
+                    <p class="subtitle">Medical Device Information</p>
+                    <hr class="divider">
+                </div>
+
+                <div class="section-card">
+                    <h2 class="section-title">Product Details</h2>
+                    <p class="data-item"><strong>Product Name:</strong> GRACE Platform</p>
+                    <p class="data-item"><strong>Component:</strong> GRACEVoice (Speech-to-Text Integration)</p>
+                </div>
+
+                <div class="section-card">
+                    <h2 class="section-title">Device Classification</h2>
+                    <p class="data-item"><strong>[MD]</strong> Class I Medical Device</p>
+                    <p class="data-item"><strong>Specification:</strong> Non-sterile | Non-measuring | Software Only</p>
+                    <p class="data-item"><strong>Regulatory Framework:</strong> UK MDR 2002 (SI 2002/618)</p>
+                </div>
+
+                <div class="section-card">
+                    <h2 class="section-title">Production & Supply Control</h2>
+                    <p class="data-item"><strong>Software Version:</strong> v1.2.3</p>
+                    <p class="data-item"><strong>Build Identifier:</strong> 20260601-001</p>
+                    <p class="data-item"><strong>Year of Manufacture:</strong> 2026</p>
+                    <p class="data-item"><strong>Device Identifier (UDI-DI):</strong> XXXXX</p>
+                </div>
+
+                <div class="section-card">
+                    <h2 class="section-title">Legal Manufacturer</h2>
+                    <p class="data-item"><strong>[🏭]</strong> GRACE International Ltd</p>
+                    <p class="data-item"><strong>Address:</strong> 128 City Road, London, EC1V 2NX, UK</p>
+                    <p class="data-item"><strong>Contact Support:</strong> <a href="mailto:support@gracehealth.care" class="link-text">support@gracehealth.care</a></p>
+                </div>
+
+                <div class="section-card">
+                    <h2 class="section-title">Regulatory References</h2>
+                    <p class="data-item"><strong>GMDN Code:</strong> [Pending Registration]</p>
+                    <p class="data-item"><strong>[📖] Instructions for Use:</strong> <a href="#" class="link-text">IFU-001</a></p>
+                </div>
+
+                <div class="regulatory-footer">
+                    <p class="footer-note">Self-Certified Class I Medical Device</p>
+                    <h3 class="ukca-symbol">UKCA</h3>
+                </div>
+            </div>
+        </div>
+        
+        <div class="home-indicator"></div>
+    </div>
+
+</body>
+</html>
